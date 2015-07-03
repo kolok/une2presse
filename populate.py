@@ -29,13 +29,21 @@ newspapers = (
 	("Le Monde","daily","http://www.revue2presse.fr/newspaper/lemonde/lemonde-cover.jpg", \
      "lemonde-cover.jpg","/Users/emilie/Documents/NewspaperCover/LeMonde/","Le Monde : http://www.lemonde.fr"),
 	("Le Figaro","daily","http://www.revue2presse.fr/newspaper/lefigaro/lefigaro-cover.jpg", \
-     "lefigaro-cover.jpg","/Users/emilie/Documents/NewspaperCover/LeFigaro/","Le Monde : http://www.lefigaro.fr"),
+     "lefigaro-cover.jpg","/Users/emilie/Documents/NewspaperCover/LeFigaro/","Le Figaro : http://www.lefigaro.fr"),
 	("Le Parisien","daily","http://www.revue2presse.fr/newspaper/leparisien/leparisien-cover.jpg", \
      "leparisien-cover.jpg","/Users/emilie/Documents/NewspaperCover/LeParisien/","Le Parisien : http://www.leparisien.fr"),
 	("L'Equipe","daily","http://www.revue2presse.fr/newspaper/lequipe/lequipe-cover.jpg", \
      "lequipe-cover.jpg","/Users/emilie/Documents/NewspaperCover/LEquipe/","L'Equipe : http://www.lequipe.fr"),
 	("Liberation","daily","http://www.revue2presse.fr/newspaper/liberation/liberation-cover.jpg", \
-     "liberation-cover.jpg","/Users/emilie/Documents/NewspaperCover/Liberation/","Liberation : http://www.liberation.fr")
+     "liberation-cover.jpg","/Users/emilie/Documents/NewspaperCover/Liberation/","Liberation : http://www.liberation.fr"),
+	("Le journal du dimanche","daily","http://www.revue2presse.fr/newspaper/lagardere/lejournaldudimanche-cover.jpg", \
+     "lejournaldudimanche-cover.jpg","/Users/emilie/Documents/NewspaperCover/LeJournalDuDimanche/","Le Journal Du Dimanche : http://www.lejdd.fr"),
+	("La Croix","daily","http://www.revue2presse.fr/newspaper/lacroix/lacroix-cover.jpg", \
+     "lacroix-cover.jpg","/Users/emilie/Documents/NewspaperCover/LaCroix/","La Croix : http://www.la-croix.com"),
+	("Les Echos","daily","http://www.revue2presse.fr/newspaper/lesechos/lesechos-cover.jpg", \
+     "lesechos-cover.jpg","/Users/emilie/Documents/NewspaperCover/LesEchos/","Les Echos : http://www.lesechos.fr"),
+	("Le Point","daily","http://www.revue2presse.fr/newspaper/lepoint/lepoint-cover.jpg", \
+     "lepoint-cover.jpg","/Users/emilie/Documents/NewspaperCover/LePoint/","Le Point : http://www.lepoint.fr")
 )
 
 con = lite.connect('une2presse.db')

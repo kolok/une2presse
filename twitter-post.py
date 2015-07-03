@@ -36,5 +36,5 @@ for myNewspaper in Nps:
     myNewspaper.downloadImage()
     if myNewspaper.compareMd5():
         twitter.tweetWithImage(myNewspaper.text, myNewspaper.folder + myNewspaper.filename, 1)
-        time.sleep(10)
+        time.sleep(20)
 
