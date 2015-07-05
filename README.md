@@ -25,3 +25,12 @@ Install Display python package
 Manage the path where chrome and chromedriver are installed
 ln -s /usr/bin/chromium /usr/bin/google-chrome
 ln -s /usr/lib/chromium/chromedriver /usr/local/bin/google-chrome
+
+
+TODO :
+* logger & send error email
+* config file
+* deploy in user
+* store files in an special folder, like : ~BASE~/NewsPaperCover
+* install and use sqlite
+
