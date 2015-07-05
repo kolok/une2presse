@@ -12,8 +12,15 @@ Install selenium package for python
 > easy_install selenium
 
 Install Chrome and ChromeDriver
-> apt-get install chronium
+> wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+> sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+> sudo apt-get update
+> sudo apt-get install google-chrome-stable
 > apt-get install chromedriver
+
+Install Display python package
+> easy_install pyvirtualdisplay
+> apt-get install xvfb
 
 Manage the path where chrome and chromedriver are installed
 ln -s /usr/bin/chromium /usr/bin/google-chrome
