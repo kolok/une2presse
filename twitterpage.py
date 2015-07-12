@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -14,7 +15,15 @@ class MainPage(object):
     def __init__(self):
 #        chromedriver = "/Users/emilie/Documents/workspace/une2presse/chromedriver"
 #        os.environ["webdriver.chrome.driver"] = chromedriver
-        self.driver = webdriver.Chrome()
+        display = Display(visible=0, size=(800, 800))
+        display.start()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.binary_location = "/usr/bin/google-chrome"
+        chrome_options.add_argument("--no-sandbox")
+        self.driver = webdriver.Chrome(
+            "/usr/local/bin/chromedriver",
+            chrome_options=chrome_options
+        )
 
     def getTwitterPage(self):
         self.driver.get("http://twitter.com")
