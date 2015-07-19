@@ -8,20 +8,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import os
 
 class MainPage(object):
 
     def __init__(self):
-#        chromedriver = "/Users/emilie/Documents/workspace/une2presse/chromedriver"
-#        os.environ["webdriver.chrome.driver"] = chromedriver
         display = Display(visible=0, size=(800, 800))
         display.start()
         chrome_options = webdriver.ChromeOptions()
         chrome_options.binary_location = "/usr/bin/google-chrome"
         chrome_options.add_argument("--no-sandbox")
         self.driver = webdriver.Chrome(
-            "/usr/local/bin/chromedriver",
+            "/usr/bin/chromedriver",
             chrome_options=chrome_options
         )
 
