@@ -58,4 +58,5 @@ class MainPage(object):
 
     def close(self):
         self.driver.quit
+        self.driver.close
 
