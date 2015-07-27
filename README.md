@@ -34,3 +34,4 @@ TODO :
 * store files in an special folder, like : ~BASE~/NewsPaperCover
 * install and use sqlite
 
+it works at this point 8e1ba5928a56d58dca606c3ab87c8eb1cca3311f
