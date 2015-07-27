@@ -9,7 +9,7 @@ import time
 
 def getNewspaper():
 
-    con = lite.connect('une2presse.db')
+    con = lite.connect('/home/nicolas/production/une2presse/une2presse.db')
 
     with con:    
 

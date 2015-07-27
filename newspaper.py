@@ -12,7 +12,7 @@ class Newspaper(object):
         self.frequency = frequency
         self.url = url
         self.filename = filename
-        self.folder = "/Users/emilie/Documents/NewspaperCover/" + folder + "/"
+        self.folder = "/home/nicolas/NewspaperCover/" + folder + "/"
         self.text = text
 
     def ensure_dir(self,f):
