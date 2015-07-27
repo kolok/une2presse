@@ -37,7 +37,7 @@ if (os.getenv('APPLI_ENV')):
 config = configparser.ConfigParser();
 config.read('une2presse.ini')
 config_env = config[appli_env];
-newspaper = config_env['newspaper_path']
+newspaper_config = config_env['newspaper_path']
 
 twitter = twitterpage.MainPage()
 twitter.signinTwitter()
