@@ -13,6 +13,7 @@ class Newspaper(object):
         self.url = url
         self.filename = filename
         self.folder = "/home/nicolas/NewspaperCover/" + folder + "/"
+        self.folder = folder + "/"
         self.text = text
 
     def ensure_dir(self,f):
