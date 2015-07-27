@@ -9,7 +9,7 @@ import time
 import os
 import configparser
 
-def getNewspaper():
+def getNewspaper(path):
 
     con = lite.connect('/home/nicolas/production/une2presse/une2presse.db')
 
@@ -23,7 +23,7 @@ def getNewspaper():
         myNewspapers=[]
 
         for row in rows:
-            myNewspapers.append(newspaper.Newspaper(row[0], row[1], row[2], row[3], newspaper_path + row[4], row[5]))
+            myNewspapers.append(newspaper.Newspaper(row[0], row[1], row[2], row[3], path + row[4], row[5]))
 
         return myNewspapers;
 
@@ -37,12 +37,12 @@ if (os.getenv('APPLI_ENV')):
 config = configparser.ConfigParser();
 config.read('une2presse.ini')
 config_env = config[appli_env];
-newspaper_config = config_env['newspaper_path']
+newspaper_path = config_env['newspaper_path']
 
 twitter = twitterpage.MainPage()
 twitter.signinTwitter()
 
-Nps = getNewspaper()
+Nps = getNewspaper(newspaper_path)
 
 for myNewspaper in Nps:
     print "Download : "+myNewspaper.name
