@@ -8,6 +8,8 @@ import twitterpage
 import time
 import os
 import configparser
+import logging
+logging.basicConfig(filename='/tmp/twitter-post.log',level=logging.DEBUG)
 
 def getNewspaper(path):
 
@@ -46,8 +48,13 @@ Nps = getNewspaper(newspaper_path)
 
 for myNewspaper in Nps:
     print "Download : "+myNewspaper.name
-    myNewspaper.downloadImage()
-    if myNewspaper.compareMd5():
-        twitter.tweetWithImage(myNewspaper.text, myNewspaper.folder + myNewspaper.filename, 1)
-        time.sleep(20)
+    logging.info("Download : "+myNewspaper.name)
+    try:
+        myNewspaper.downloadImage()
+        if myNewspaper.compareMd5():
+            twitter.tweetWithImage(myNewspaper.text, myNewspaper.folder + myNewspaper.filename, 1)
+            time.sleep(20)
+    except Error:
+        logging.error("An error occur : "+Error)
+
 
