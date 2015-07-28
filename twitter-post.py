@@ -9,7 +9,9 @@ import time
 import os
 import configparser
 import logging
-logging.basicConfig(filename='/tmp/twitter-post.log',level=logging.DEBUG)
+import time
+
+logging.basicConfig(filename='/tmp/twitter-post.log',level=logging.INFO)
 
 def getNewspaper(path):
 
@@ -30,6 +32,10 @@ def getNewspaper(path):
         return myNewspapers;
 
 
+logging.info("Job is launched at " + time.strftime("%d/%m/%Y %H:%M:%S"))
+
+logging.info("Read config file")
+
 # get application environment variable
 appli_env = 'desktop'
 if (os.getenv('APPLI_ENV')):
@@ -37,24 +43,30 @@ if (os.getenv('APPLI_ENV')):
 
 # Read configuration related to environment
 config = configparser.ConfigParser();
-config.read('une2presse.ini')
+config.read('/home/nicolas/production/une2presse/une2presse.ini')
 config_env = config[appli_env];
 newspaper_path = config_env['newspaper_path']
+
+logging.info("Sign in to twitter")
 
 twitter = twitterpage.MainPage()
 twitter.signinTwitter()
 
+logging.info("Get action from DB")
+
 Nps = getNewspaper(newspaper_path)
 
 for myNewspaper in Nps:
-    print "Download : "+myNewspaper.name
-    logging.info("Download : "+myNewspaper.name)
+    logging.info("Download " + myNewspaper.name)
     try:
         myNewspaper.downloadImage()
         if myNewspaper.compareMd5():
+            logging.info("Tweet " + myNewspaper.name)
             twitter.tweetWithImage(myNewspaper.text, myNewspaper.folder + myNewspaper.filename, 1)
             time.sleep(20)
-    except Error:
+    except ValueError:
         logging.error("An error occur : "+Error)
 
+logging.info("close the browser")
+twitter.close()
 

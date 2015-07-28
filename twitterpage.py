@@ -57,5 +57,5 @@ class MainPage(object):
             button.click()
 
     def close(self):
-        self.driver.close()
+        self.driver.quit()
 
